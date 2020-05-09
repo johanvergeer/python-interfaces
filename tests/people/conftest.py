@@ -1,5 +1,6 @@
 import sqlite3
 from datetime import date
+from typing import Iterator
 
 import pytest
 from faker import Faker
@@ -16,7 +17,7 @@ def faker() -> Faker:
 
 
 @pytest.fixture
-def sqlite_conn(tmpdir) -> sqlite3.Connection:
+def sqlite_conn(tmpdir) -> Iterator[sqlite3.Connection]:
     """Return a :class:sqlite3.Connection instance for the test function
     and will close the connection after the test
     """

@@ -70,7 +70,7 @@ class PersonSqLiteRepository(PersonRepositoryProtocol):
             return None
 
         person = Person(person_data[0], date.fromisoformat(person_data[1]))
-        person._Person__id = person_id
+        setattr(person, "_Person__id", person_id)
         return person
 
 
@@ -111,7 +111,7 @@ class PersonJsonRepository(PersonRepositoryProtocol):
 
         with self.__json_file.open("w") as people_file:
             next_person_id = people_json["last_person_id"] + 1
-            person._Person__id = next_person_id
+            setattr(person, "_Person__id", next_person_id)
             people_json["last_person_id"] = next_person_id
 
             people_json["people"].append(person.as_dict())

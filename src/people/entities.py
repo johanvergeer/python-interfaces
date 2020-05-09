@@ -29,6 +29,6 @@ class Person:
             date_of_birth=date.fromisoformat(person_dict["date_of_birth"]),
         )
 
-        person._Person__id = person_dict["id"]
+        setattr(person, "_Person__id", person_dict["id"])
 
         return person

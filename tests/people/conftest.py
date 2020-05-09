@@ -45,7 +45,7 @@ def person(date_of_birth, name):
 @pytest.fixture
 def person_with_id(person, faker):
     """Return a :class:Person instance with an id for the test function"""
-    person._Person__id = faker.random_digit()
+    person.id = faker.random_digit()
     return person
 
 

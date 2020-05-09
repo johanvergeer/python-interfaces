@@ -2,18 +2,13 @@ from dataclasses import dataclass
 from datetime import date
 from typing import Dict
 
+from core.entities import BaseEntity
+
 
 @dataclass
-class Person:
+class Person(BaseEntity):
     name: str
     date_of_birth: date
-
-    def __post_init__(self):
-        self.__id = None
-
-    @property
-    def id(self):
-        return self.__id
 
     def as_dict(self):
         return {

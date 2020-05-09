@@ -56,7 +56,7 @@ class PersonSqLiteRepository(PersonRepositoryProtocol):
     def _set_person_id(self, person):
         cursor = self.__conn.cursor()
         cursor.execute("select last_insert_rowid()")
-        person._Person__id = cursor.fetchone()[0]
+        person.id = cursor.fetchone()[0]
 
     def find_person_by_id(self, person_id: int) -> Optional[Person]:
         cursor = self.__conn.cursor()
@@ -111,7 +111,7 @@ class PersonJsonRepository(PersonRepositoryProtocol):
 
         with self.__json_file.open("w") as people_file:
             next_person_id = people_json["last_person_id"] + 1
-            setattr(person, "_Person__id", next_person_id)
+            person.id = next_person_id
             people_json["last_person_id"] = next_person_id
 
             people_json["people"].append(person.as_dict())

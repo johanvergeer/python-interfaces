@@ -14,11 +14,11 @@ I could have gone much further with some concepts, but I wanted to keep things a
 Entities
 ########
 
-The Person entity can be found in `person_entities.py`.
-As you can see it is a very simple entity with a `name`, `date_of_birth` and an `id`.
+I created a `BaseEntity` which only has an `id` property which is immutable once it has a value.
+The `id` is supposed to be set on saving the entity.
 
-The `id` should be set in the persistence layer, as is described in the `PersonRepositoryProtocol`.
-Once the `id` value is set it should be handled as immutable.
+The Person entity can be found in `people.entities.py`.
+As you can see it is a very simple entity with a `name` and a `date_of_birth`.
 
 Repositories
 ############

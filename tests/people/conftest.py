@@ -4,10 +4,11 @@ from typing import Iterator
 
 import pytest
 from faker import Faker
-
 from people.entities import Person
-from people.repositories import (PersonRepositoryProtocol,
-                                 create_tables_if_they_do_not_exist)
+from people.repositories import (
+    PersonRepositoryProtocol,
+    create_tables_if_they_do_not_exist,
+)
 
 
 @pytest.fixture(scope="session")

@@ -1,5 +1,4 @@
 import pytest
-
 from people.usecases import AddPersonUseCase, FindPersonByIdUseCase
 
 

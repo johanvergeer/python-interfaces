@@ -3,7 +3,6 @@ import tempfile
 from pathlib import Path
 
 import pytest
-
 from people.entities import Person
 from people.repositories import PersonJsonRepository, PersonSqLiteRepository
 

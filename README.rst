@@ -91,10 +91,20 @@ If you still want to take it up a notch you can take a look at a dependency inje
 I listed a few in my `article on dependency injection frameworks`_.
 
 
+Contribute
+##########
+
+If you have any ideas feel free to create an issue or a pull request.
+
+After cloning the repository you can install the dependencies with `poetry install`
+
+Next you need to install `pre-commit`_ with `pre-commit install`.
+
 
 .. _article on dependency injection frameworks: https://codingwithjohan.com/articles/python/python-dependency-injection-frameworks/
 .. _Clean Architecture: https://www.amazon.com/Clean-Architecture-Craftsmans-Software-Structure/dp/0134494164
 .. _Clean Architectures for Python: https://leanpub.com/clean-architectures-in-python
 .. _Click: https://click.palletsprojects.com/en/7.x/
 .. _Flask: https://flask.palletsprojects.com/en/1.1.x/
+.. _pre-commit: https://pre-commit.com/
 .. _Protocols: https://mypy.readthedocs.io/en/stable/protocols.html#simple-user-defined-protocols

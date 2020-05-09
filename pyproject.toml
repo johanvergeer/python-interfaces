@@ -6,6 +6,7 @@ authors = ["Johan Vergeer <johanvergeer@gmail.com>"]
 
 packages = [
     { include = "people", from = "src" },
+    { include = "core", from = "src" },
 ]
 
 [tool.poetry.dependencies]
@@ -27,7 +28,7 @@ line_length=88
 force_grid_wrap=0
 use_parentheses = true
 known_first_party = ["people"]
-known_third_party = ["typing_extensions"]
+known_third_party = ["attr", "core", "typing_extensions"]
 known_test_libs = ["pytest", "faker", "pytest-mock"]
 
 [build-system]

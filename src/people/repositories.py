@@ -86,7 +86,7 @@ def create_tables_if_they_do_not_exist(conn: Connection) -> None:
                     constraint people_pk
                         primary key autoincrement
             );
-    	"""
+        """
     )
 
     conn.execute(

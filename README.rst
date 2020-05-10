@@ -14,11 +14,11 @@ I could have gone much further with some concepts, but I wanted to keep things a
 Entities
 ########
 
-I created a `BaseEntity` which only has an `id` property which is immutable once it has a value.
-The `id` is supposed to be set on saving the entity.
+I created a :code:`BaseEntity` which only has an :code:`id` property which is immutable once it has a value.
+The :code:`id` is supposed to be set on saving the entity.
 
-The Person entity can be found in `people.entities.py`.
-As you can see it is a very simple entity with a `name` and a `date_of_birth`.
+The Person entity can be found in :code:`people.entities.py`.
+As you can see it is a very simple entity with a :code:`name` and a :code:`date_of_birth`.
 
 Repositories
 ############
@@ -26,7 +26,7 @@ Repositories
 Repositories take care of persisting and retrieving data to some kind of storage.
 Usually I would also include a Unit of Work mechanism but I left that out for the sake of simplicity.
 
-`PersonRepositoryProtocol` is the interface. It only contains two abstract methods
+:code:`PersonRepositoryProtocol` is the interface. It only contains two abstract methods
 that defines how a class that implements this interface should behave.
 
 As an example I created two implementations, one for a SQLite database and one for json files.
@@ -39,7 +39,7 @@ The repository tests check whether the classes have correctly implemented the in
 They actually use the database and a json file, which makes them integration tests.
 
 A proper application design makes sure that only the repositories have to use the actual storage.
-All other tests can use a Mock of the `PersonRepositoryProtocol` which you can read next.
+All other tests can use a Mock of the :code:`PersonRepositoryProtocol` which you can read next.
 
 Use Cases
 #########
@@ -47,12 +47,12 @@ Use Cases
 Use cases handle the business logic of the application. The use cases in this application are very simple,
 since the business logic is very simple. But you might imagine that they can be a lot more complicated.
 
-Each use case uses dependency injection to get a `PersonRepositoryProtocol`, which it will use during execution.
+Each use case uses dependency injection to get a :code:`PersonRepositoryProtocol`, which it will use during execution.
 
 Use Case Tests
 --------------
 
-The use case tests use a mock object created from the `PersonRepositoryProtocol`.
+The use case tests use a mock object created from the :code:`PersonRepositoryProtocol`.
 We don't need to talk to the actual storage.
 All we need to know is whether the use case calls the correct methods on the repository.
 
@@ -62,7 +62,7 @@ How to use this?
 
 Now you might ask yourself how to use this in practice. Let's take a simple example:
 
-In this example we'll use the `PersonJsonRepository` and we'll save people.json in the home directory.
+In this example we'll use the :code:`PersonJsonRepository` and we'll save people.json in the home directory.
 
 .. code-block:: python
 
@@ -78,7 +78,7 @@ In this example we'll use the `PersonJsonRepository` and we'll save people.json 
 
 
 And that's it. This is a very simple example, but you can also use this in a CLI app using Click_
-or in a webapp using Flask_. When you want to use another storage, just implement the `PersonRepositoryProtocol`
+or in a webapp using Flask_. When you want to use another storage, just implement the :code:`PersonRepositoryProtocol`
 and inject it into the use cases.
 
 So what's next?
@@ -96,9 +96,9 @@ Contribute
 
 If you have any ideas feel free to create an issue or a pull request.
 
-After cloning the repository you can install the dependencies with `poetry install`
+After cloning the repository you can install the dependencies with :code:`poetry install`
 
-Next you need to install `pre-commit`_ with `pre-commit install`.
+Next you need to install `pre-commit`_ with :code:`pre-commit install`.
 
 
 .. _article on dependency injection frameworks: https://codingwithjohan.com/articles/python/python-dependency-injection-frameworks/

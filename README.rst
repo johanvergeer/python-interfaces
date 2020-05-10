@@ -5,6 +5,8 @@ Python Interfaces Tutorial
 This project is all about showing how to create and use interfaces in Python
 using Protocols_, which were added in Python 3.8.
 
+If you want to use Protocols before Python 3.8 you can use `typing_extensions`_
+
 
 I'm a big fan of `Clean Architecture`_, which was described in the book with the same name
 and in `Clean Architectures for Python`_. I wanted to apply this architecture in this project.
@@ -108,3 +110,4 @@ Next you need to install `pre-commit`_ with :code:`pre-commit install`.
 .. _Flask: https://flask.palletsprojects.com/en/1.1.x/
 .. _pre-commit: https://pre-commit.com/
 .. _Protocols: https://mypy.readthedocs.io/en/stable/protocols.html#simple-user-defined-protocols
+.. _typing_extensions: https://pypi.org/project/typing-extensions/
